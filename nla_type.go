@@ -121,7 +121,7 @@ func setU64(attr *Attr) error {
 	}
 	nla := attr.Bytes()
 	if attr.Header.Type&syscall.NLA_F_NET_BYTEORDER == 0 {
-		attr.Value = U64(*(*uint32)(unsafe.Pointer(&nla[NLA_HDRLEN])))
+		attr.Value = U64(*(*uint64)(unsafe.Pointer(&nla[NLA_HDRLEN])))
 	} else {
 		attr.Value = U64(binary.BigEndian.Uint64(nla[NLA_HDRLEN:]))
 	}

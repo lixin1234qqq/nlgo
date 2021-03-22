@@ -1,10 +1,11 @@
 package rtlink
 
 import (
-	"github.com/hkwi/nlgo"
 	"net"
 	"syscall"
 	"unsafe"
+
+	"github.com/hkwi/nlgo"
 )
 
 type FdbQuery struct {
